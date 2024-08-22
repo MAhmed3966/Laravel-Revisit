@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd56af4c7658ffdbaed5b5d666b3d41a64cc23b98',
+        'reference' => '87076e97895e6b10d7273e075a6c77854b934023',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -403,7 +403,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd56af4c7658ffdbaed5b5d666b3d41a64cc23b98',
+            'reference' => '87076e97895e6b10d7273e075a6c77854b934023',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -609,6 +609,18 @@
             'aliases' => array(),
             'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
             'dev_requirement' => true,
+        ),
+        'php-http/async-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '*',
+            ),
+        ),
+        'php-http/client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '*',
+            ),
         ),
         'phpoption/phpoption' => array(
             'pretty_version' => '1.9.3',
@@ -1082,6 +1094,30 @@
             'reference' => '717c6329886f32dc65e27461f80f2a465412fdca',
             'dev_requirement' => false,
         ),
+        'symfony/http-client' => array(
+            'pretty_version' => 'v7.1.3',
+            'version' => '7.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-client',
+            'aliases' => array(),
+            'reference' => 'b79858aa7a051ea791b0d50269a234a0b50cb231',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-client-contracts' => array(
+            'pretty_version' => 'v3.5.0',
+            'version' => '3.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-client-contracts',
+            'aliases' => array(),
+            'reference' => '20414d96f391677bf80078aa55baece78b82647d',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '3.0',
+            ),
+        ),
         'symfony/http-foundation' => array(
             'pretty_version' => 'v7.1.3',
             'version' => '7.1.3.0',
@@ -1107,6 +1143,15 @@
             'install_path' => __DIR__ . '/../symfony/mailer',
             'aliases' => array(),
             'reference' => '8fcff0af9043c8f8a8e229437cea363e282f9aee',
+            'dev_requirement' => false,
+        ),
+        'symfony/mailgun-mailer' => array(
+            'pretty_version' => 'v7.1.3',
+            'version' => '7.1.3.0',
+            'type' => 'symfony-mailer-bridge',
+            'install_path' => __DIR__ . '/../symfony/mailgun-mailer',
+            'aliases' => array(),
+            'reference' => 'dac02fe68e9306849703025511c56f10701696a8',
             'dev_requirement' => false,
         ),
         'symfony/mime' => array(

@@ -50,6 +50,7 @@
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
       22 => 'App\\Providers\\AppServiceProvider',
+      23 => 'App\\Providers\\ProductServiceProvider',
     ),
     'aliases' => 
     array (
@@ -102,7 +103,7 @@
   array (
     'defaults' => 
     array (
-      'guard' => 'web',
+      'guard' => 'api',
       'passwords' => 'users',
     ),
     'guards' => 
@@ -111,6 +112,12 @@
       array (
         'driver' => 'session',
         'provider' => 'users',
+      ),
+      'api' => 
+      array (
+        'driver' => 'sanctum',
+        'provider' => 'users',
+        'hash' => false,
       ),
       'sanctum' => 
       array (
@@ -585,11 +592,11 @@
       array (
         'transport' => 'smtp',
         'url' => NULL,
-        'host' => 'smtp.mailtrap.io',
-        'port' => '2525',
+        'host' => 'live.smtp.mailtrap.io',
+        'port' => '587',
         'encryption' => 'tls',
-        'username' => 'm.ahmed3966@gmail.com',
-        'password' => 'BigVision2023IAA_',
+        'username' => '831650ea19c1f5',
+        'password' => '3eb154418bb223',
         'timeout' => NULL,
         'local_domain' => 'localhost',
       ),
@@ -640,7 +647,7 @@
     ),
     'from' => 
     array (
-      'address' => 'm.ahmed3966@gmail.com',
+      'address' => 'no-reply@mailtrap.club',
       'name' => 'Laravel',
     ),
     'markdown' => 
