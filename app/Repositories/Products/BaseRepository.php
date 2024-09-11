@@ -34,7 +34,7 @@ class BaseRepository implements BaseInterface
             }
         } catch (\Exception $e) {
             Log::error($e->getMessage() . "  Enable to create the Product");
-            throw new \Exception("Unable to create the product");
+        throw new \Exception("Unable to create the product");
         }
     }
     public function update($id,$request)

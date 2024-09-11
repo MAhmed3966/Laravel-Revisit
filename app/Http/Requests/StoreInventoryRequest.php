@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginValidation extends FormRequest
+class StoreInventoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +24,10 @@ class LoginValidation extends FormRequest
     public function rules(): array
     {
         return [
-            'email'=> 'required|email',
-            'password'=>'required|string'
+            "quantity" => "required|integer",
+            "vendor_id" => 'required|integer|gt:0|exists:'. User::class .',id',
+            "product_id" => 'required|integer|gt:0|exists:'. Product::class .',id',
+            "status" => "sometimes"
         ];
     }
 }

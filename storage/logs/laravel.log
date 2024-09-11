@@ -1,3 +1,124 @@
-[2024-08-22 06:46:03] local.ERROR: Attempt to read property "id" on array  
-[2024-08-22 06:46:42] local.ERROR: Attempt to read property "id" on array  
-[2024-08-22 06:50:53] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'not_allowed' in 'field list' (Connection: mysql, SQL: update `products` set `title` = This is the product 1313, `description` = asdfghjksdfafghjasdfghsdfghjdfghg, `sku` = 23213131, `not_allowed` = dasdashdasas, `id` = 1, `products`.`updated_at` = 2024-08-22 06:50:53 where `id` = 1)  
+[2024-09-09 09:48:19] local.INFO: array (
+  'Quantity' => '20202',
+)
+[2024-09-09 09:48:19] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'total_quantity' doesn't have a default value (Connection: mysql, SQL: insert into `product_inventories` (`product_id`, `vendor_id`, `updated_at`, `created_at`) values (40, 34, 2024-09-09 09:48:19, 2024-09-09 09:48:19))
+[2024-09-09 09:48:19] local.ERROR: Unable to update the product Inventory
+[2024-09-09 09:48:52] local.INFO: array (
+  'Quantity' => '20748',
+)
+[2024-09-09 09:48:52] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'total_quantity' doesn't have a default value (Connection: mysql, SQL: insert into `product_inventories` (`product_id`, `vendor_id`, `updated_at`, `created_at`) values (40, 34, 2024-09-09 09:48:52, 2024-09-09 09:48:52))
+[2024-09-09 09:48:52] local.ERROR: Unable to update the product Inventory
+[2024-09-09 09:49:01] local.INFO: array (
+  'Quantity' => '21294',
+)  
+[2024-09-09 09:49:01] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'total_quantity' doesn't have a default value (Connection: mysql, SQL: insert into `product_inventories` (`product_id`, `vendor_id`, `updated_at`, `created_at`) values (40, 34, 2024-09-09 09:49:01, 2024-09-09 09:49:01))  
+[2024-09-09 09:49:01] local.ERROR: Unable to update the product Inventory  
+[2024-09-09 09:49:22] local.INFO: array (
+  'Quantity' => '21840',
+)  
+[2024-09-09 09:56:13] local.INFO: array (
+  'Quantity' => '22386',
+)  
+[2024-09-09 09:59:16] local.INFO: array (
+  'Quantity' => '22381',
+)  
+[2024-09-11 06:39:41] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:39:41] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:39:48] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:39:48] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:39:57] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:39:57] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:04] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:20] local.ERROR: syntax error, unexpected token "}", expecting identifier or variable or "{" or "$" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting identifier or variable or \"{\" or \"$\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:20] local.ERROR: syntax error, unexpected token "}", expecting identifier or variable or "{" or "$" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting identifier or variable or \"{\" or \"$\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:41] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:41] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:58] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:40:58] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:09] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:09] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:28] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:28] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:53] local.ERROR: syntax error, unexpected token "}", expecting "(" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \"(\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:59)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:41:53] local.ERROR: syntax error, unexpected token "}", expecting "(" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \"(\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:59)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:42:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:42:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:42:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:42:14] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
+[stacktrace]
+#0 {main}
+"} 
+[2024-09-11 06:42:14] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
+[stacktrace]
+#0 {main}
+"} 

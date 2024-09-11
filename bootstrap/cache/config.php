@@ -50,7 +50,8 @@
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
       22 => 'App\\Providers\\AppServiceProvider',
-      23 => 'App\\Providers\\ProductServiceProvider',
+      23 => 'App\\Providers\\HorizonServiceProvider',
+      24 => 'App\\Providers\\ProductServiceProvider',
     ),
     'aliases' => 
     array (
@@ -313,6 +314,7 @@
       ),
       'default' => 
       array (
+        'scheme' => 'tls',
         'url' => NULL,
         'host' => '127.0.0.1',
         'username' => NULL,
@@ -328,6 +330,20 @@
         'password' => NULL,
         'port' => '6379',
         'database' => '1',
+      ),
+      'horizon' => 
+      array (
+        'scheme' => 'tls',
+        'url' => NULL,
+        'host' => '127.0.0.1',
+        'username' => NULL,
+        'password' => NULL,
+        'port' => '6379',
+        'database' => '0',
+        'options' => 
+        array (
+          'prefix' => 'laravel_horizon:',
+        ),
       ),
     ),
   ),
@@ -366,6 +382,82 @@
     'links' => 
     array (
       '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/public/storage' => '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/storage/app/public',
+    ),
+  ),
+  'horizon' => 
+  array (
+    'domain' => NULL,
+    'path' => 'horizon',
+    'use' => 'default',
+    'prefix' => 'laravel_horizon:',
+    'middleware' => 
+    array (
+      0 => 'web',
+    ),
+    'waits' => 
+    array (
+      'redis:default' => 60,
+    ),
+    'trim' => 
+    array (
+      'recent' => 60,
+      'pending' => 60,
+      'completed' => 60,
+      'recent_failed' => 10080,
+      'failed' => 10080,
+      'monitored' => 10080,
+    ),
+    'silenced' => 
+    array (
+    ),
+    'metrics' => 
+    array (
+      'trim_snapshots' => 
+      array (
+        'job' => 24,
+        'queue' => 24,
+      ),
+    ),
+    'fast_termination' => false,
+    'memory_limit' => 64,
+    'defaults' => 
+    array (
+      'supervisor-1' => 
+      array (
+        'connection' => 'redis',
+        'queue' => 
+        array (
+          0 => 'default',
+        ),
+        'balance' => 'auto',
+        'autoScalingStrategy' => 'time',
+        'maxProcesses' => 1,
+        'maxTime' => 0,
+        'maxJobs' => 0,
+        'memory' => 128,
+        'tries' => 1,
+        'timeout' => 60,
+        'nice' => 0,
+      ),
+    ),
+    'environments' => 
+    array (
+      'production' => 
+      array (
+        'supervisor-1' => 
+        array (
+          'maxProcesses' => 10,
+          'balanceMaxShift' => 1,
+          'balanceCooldown' => 3,
+        ),
+      ),
+      'local' => 
+      array (
+        'supervisor-1' => 
+        array (
+          'maxProcesses' => 3,
+        ),
+      ),
     ),
   ),
   'l5-swagger' => 
@@ -448,6 +540,13 @@
       array (
         'securitySchemes' => 
         array (
+          'sanctum' => 
+          array (
+            'type' => 'apiKey',
+            'description' => 'Enter token in format (Bearer <token>)',
+            'name' => 'Authorization',
+            'in' => 'header',
+          ),
         ),
         'security' => 
         array (
@@ -592,8 +691,8 @@
       array (
         'transport' => 'smtp',
         'url' => NULL,
-        'host' => 'live.smtp.mailtrap.io',
-        'port' => '587',
+        'host' => 'sandbox.smtp.mailtrap.io',
+        'port' => '2525',
         'encryption' => 'tls',
         'username' => '831650ea19c1f5',
         'password' => '3eb154418bb223',
@@ -703,7 +802,7 @@
         'connection' => 'default',
         'queue' => 'default',
         'retry_after' => 90,
-        'block_for' => NULL,
+        'block_for' => 5,
         'after_commit' => false,
       ),
     ),

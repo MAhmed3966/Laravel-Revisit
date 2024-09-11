@@ -49,4 +49,14 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);
     }
+
+    public function ProductInventories(){
+        return $this->hasMany(ProductInventory::class);
+    }
+
+    public function images()
+    {
+        return $this->morphTo(Image::class, 'imageable');
+    }
+
 }

@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Mail;
  *     )
  * )
  */
-class AuthController extends Controller
+class AuthController extends BaseController
 {
 
     /**
@@ -105,7 +105,7 @@ class AuthController extends Controller
                 "email" => $request->email,
                 "password" => Hash::make($request->password),
             ]);
-            // Mail::to("m.ahmed3966@gmail.com")->send(new WelcomeEmail($user->name));
+            Mail::to("m.ahmed3966@gmail.com")->send(new WelcomeEmail($user->name));
             return response()->json([
                 "user" => Auth::user(),
                 "message" => "User Created Successfully",
@@ -167,16 +167,21 @@ class AuthController extends Controller
 
     public function login(LoginValidation $request)
     {
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            throw ValidationException::withMessages([
-                'email' => ["The provided credentials are incorrect"],
-            ]);
-        }
-        $user = Auth::user();
+        try {
 
-        return response()->json([
-            'message' => "User logged In successfully",
-            'token' => $user->createToken('Personal Access Token')->plainTextToken,
-        ]);
+            $user = User::where('email',$request->email)->first();
+            if(!$user || !Hash::check($request->password, $user->password)){
+                throw ValidationException::withMessages([
+                    'email' => ['Invalid Credentials'],
+                ]);
+            }
+
+            $token = $user->createToken('Person Access Token')->plainTextToken;
+
+            return $this->successResponse(["token" => $token], "User logged In successfully");
+
+        } catch (\Exception $e) {
+                return $this->errorResponse('',$e->getMessage(), 500);
+        }
     }
 }
