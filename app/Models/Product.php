@@ -14,4 +14,9 @@ class Product extends Model
     public function productInventories(){
         return $this->hasMany(ProductInventory::class);
     }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }

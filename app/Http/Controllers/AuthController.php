@@ -6,6 +6,7 @@ use App\Http\Requests\LoginValidation;
 use App\Http\Requests\RegisterValidation;
 use App\Mail\WelcomeEmail;
 use App\Models\User;
+use App\Repositories\ImageRepository;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -31,6 +32,11 @@ use Illuminate\Support\Facades\Mail;
  */
 class AuthController extends BaseController
 {
+    public $image_repository;
+    public function __construct(ImageRepository $image_repository)
+    {
+        $this->image_repository = $image_repository;
+    }
 
     /**
      * @OA\Post(
@@ -99,12 +105,15 @@ class AuthController extends BaseController
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8',
+                'image' => 'mimes:jpeg,png,jpg,gif'
             ]);
             $user = User::create([
                 "name" => $request->name,
                 "email" => $request->email,
                 "password" => Hash::make($request->password),
             ]);
+            $this->image_repository->storeImages($request, $user);
+            dd("dsads");
             Mail::to("m.ahmed3966@gmail.com")->send(new WelcomeEmail($user->name));
             return response()->json([
                 "user" => Auth::user(),

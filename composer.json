@@ -8,6 +8,7 @@
         "php": "^8.2",
         "darkaonline/l5-swagger": "^8.6",
         "doctrine/annotations": "^2.0",
+        "intervention/image": "^3.8",
         "laravel/framework": "^11.9",
         "laravel/horizon": "^5.28",
         "laravel/sanctum": "^4.0",

@@ -27,8 +27,9 @@ class BaseRepository implements BaseInterface
     public function store($data)
     {
         try {
-            if ($this->model->create($data)) {
-                return true;
+            $is_inserted =  $this->model->create($data);
+            if ($is_inserted) {
+                return $is_inserted;
             } else {
                 return false;
             }

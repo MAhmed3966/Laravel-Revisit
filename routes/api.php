@@ -18,3 +18,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('products', ProductController::class);
     Route::apiResource('product-transactions', ProductInventoryTransactionsController::class);
 });
+
+
+Route::get('/check', function(){
+    echo phpinfo();
+});

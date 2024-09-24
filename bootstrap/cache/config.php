@@ -460,6 +460,13 @@
       ),
     ),
   ),
+  'image' => 
+  array (
+    'options' => 
+    array (
+      'image_path' => '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/storage/app/public/uploads/',
+    ),
+  ),
   'l5-swagger' => 
   array (
     'default' => 'default',

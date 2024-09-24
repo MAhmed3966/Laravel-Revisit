@@ -1,124 +1,199 @@
-[2024-09-09 09:48:19] local.INFO: array (
-  'Quantity' => '20202',
-)
-[2024-09-09 09:48:19] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'total_quantity' doesn't have a default value (Connection: mysql, SQL: insert into `product_inventories` (`product_id`, `vendor_id`, `updated_at`, `created_at`) values (40, 34, 2024-09-09 09:48:19, 2024-09-09 09:48:19))
-[2024-09-09 09:48:19] local.ERROR: Unable to update the product Inventory
-[2024-09-09 09:48:52] local.INFO: array (
-  'Quantity' => '20748',
-)
-[2024-09-09 09:48:52] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'total_quantity' doesn't have a default value (Connection: mysql, SQL: insert into `product_inventories` (`product_id`, `vendor_id`, `updated_at`, `created_at`) values (40, 34, 2024-09-09 09:48:52, 2024-09-09 09:48:52))
-[2024-09-09 09:48:52] local.ERROR: Unable to update the product Inventory
-[2024-09-09 09:49:01] local.INFO: array (
-  'Quantity' => '21294',
-)  
-[2024-09-09 09:49:01] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'total_quantity' doesn't have a default value (Connection: mysql, SQL: insert into `product_inventories` (`product_id`, `vendor_id`, `updated_at`, `created_at`) values (40, 34, 2024-09-09 09:49:01, 2024-09-09 09:49:01))  
-[2024-09-09 09:49:01] local.ERROR: Unable to update the product Inventory  
-[2024-09-09 09:49:22] local.INFO: array (
-  'Quantity' => '21840',
-)  
-[2024-09-09 09:56:13] local.INFO: array (
-  'Quantity' => '22386',
-)  
-[2024-09-09 09:59:16] local.INFO: array (
-  'Quantity' => '22381',
-)  
-[2024-09-11 06:39:41] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-13 12:27:35] local.ERROR: Call to undefined method Intervention\Image\Image::make() {"userId":89,"exception":"[object] (Error(code: 0): Call to undefined method Intervention\\Image\\Image::make() at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Repositories/ImageRepository.php:31)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Repositories/ImageRepository.php(60): App\\Repositories\\ImageRepository->moveImages()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Http/Controllers/ProductController.php(161): App\\Repositories\\ImageRepository->storeImages()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): App\\Http\\Controllers\\ProductController->store()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(206): Illuminate\\Routing\\Route->runController()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(808): Illuminate\\Routing\\Route->run()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(64): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#11 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#13 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack()
+#14 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute()
+#15 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute()
+#16 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch()
+#17 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#18 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#19 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#20 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#21 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#23 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#24 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
+#26 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#28 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#30 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#32 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then()
+#34 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#35 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1188): Illuminate\\Foundation\\Http\\Kernel->handle()
+#36 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/public/index.php(17): Illuminate\\Foundation\\Application->handleRequest()
+#37 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('...')
+#38 {main}
 "} 
-[2024-09-11 06:39:41] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 06:56:31] local.ERROR: Call to undefined method Intervention\Image\Image::make() {"userId":89,"exception":"[object] (Error(code: 0): Call to undefined method Intervention\\Image\\Image::make() at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Repositories/ImageRepository.php:31)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Repositories/ImageRepository.php(60): App\\Repositories\\ImageRepository->moveImages()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Http/Controllers/ProductController.php(161): App\\Repositories\\ImageRepository->storeImages()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): App\\Http\\Controllers\\ProductController->store()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(206): Illuminate\\Routing\\Route->runController()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(808): Illuminate\\Routing\\Route->run()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(64): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#11 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#13 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack()
+#14 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute()
+#15 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute()
+#16 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch()
+#17 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#18 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#19 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#20 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#21 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#23 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#24 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle()
+#26 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#28 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#30 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#32 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then()
+#34 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#35 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1188): Illuminate\\Foundation\\Http\\Kernel->handle()
+#36 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/public/index.php(17): Illuminate\\Foundation\\Application->handleRequest()
+#37 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('...')
+#38 {main}
 "} 
-[2024-09-11 06:39:48] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:04] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:231)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(138): Illuminate\\Log\\LogManager->resolve()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\\Log\\LogManager->get()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(700): Illuminate\\Log\\LogManager->driver()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(378): Illuminate\\Log\\LogManager->error()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(339): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(620): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 {main}
 "} 
-[2024-09-11 06:39:48] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:04] laravel.ERROR: syntax error, unexpected token "]" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"]\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/config/image.php:6)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(77): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFile()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(316): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(473): Illuminate\\Foundation\\Application->bootstrapWith()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#6 {main}
 "} 
-[2024-09-11 06:39:57] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:04] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:231)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(138): Illuminate\\Log\\LogManager->resolve()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\\Log\\LogManager->get()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(700): Illuminate\\Log\\LogManager->driver()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(378): Illuminate\\Log\\LogManager->error()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(339): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(620): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 {main}
 "} 
-[2024-09-11 06:39:57] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:04] laravel.ERROR: syntax error, unexpected token "]" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"]\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/config/image.php:6)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(77): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFile()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(316): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(473): Illuminate\\Foundation\\Application->bootstrapWith()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#6 {main}
 "} 
-[2024-09-11 06:40:04] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:16] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:231)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(138): Illuminate\\Log\\LogManager->resolve()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\\Log\\LogManager->get()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(700): Illuminate\\Log\\LogManager->driver()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(378): Illuminate\\Log\\LogManager->error()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(339): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(620): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 {main}
 "} 
-[2024-09-11 06:40:20] local.ERROR: syntax error, unexpected token "}", expecting identifier or variable or "{" or "$" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting identifier or variable or \"{\" or \"$\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:16] laravel.ERROR: syntax error, unexpected token "]" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"]\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/config/image.php:6)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(77): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFile()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(316): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(473): Illuminate\\Foundation\\Application->bootstrapWith()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#6 {main}
 "} 
-[2024-09-11 06:40:20] local.ERROR: syntax error, unexpected token "}", expecting identifier or variable or "{" or "$" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting identifier or variable or \"{\" or \"$\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Image.php:14)
+[2024-09-16 08:10:16] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:231)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(138): Illuminate\\Log\\LogManager->resolve()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\\Log\\LogManager->get()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(700): Illuminate\\Log\\LogManager->driver()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(378): Illuminate\\Log\\LogManager->error()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(339): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(620): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 {main}
 "} 
-[2024-09-11 06:40:41] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:14)
+[2024-09-16 08:10:16] laravel.ERROR: syntax error, unexpected token "]" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"]\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/config/image.php:6)
 [stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(77): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFile()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(316): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(473): Illuminate\\Foundation\\Application->bootstrapWith()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(195): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#6 {main}
 "} 
-[2024-09-11 06:40:41] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:14)
+[2024-09-16 08:11:00] local.ERROR: Undefined variable $image_path {"exception":"[object] (ErrorException(code: 0): Undefined variable $image_path at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/config/image.php:5)
 [stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:40:58] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:40:58] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:09] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:09] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:28] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:28] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/Vendor.php:15)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:53] local.ERROR: syntax error, unexpected token "}", expecting "(" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \"(\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:59)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:41:53] local.ERROR: syntax error, unexpected token "}", expecting "(" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \"(\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:59)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:42:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:42:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:42:04] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:42:14] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
-[stacktrace]
-#0 {main}
-"} 
-[2024-09-11 06:42:14] local.ERROR: syntax error, unexpected token "}", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/app/Models/User.php:60)
-[stacktrace]
-#0 {main}
+#0 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/config/image.php(5): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(96): require('...')
+#3 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(77): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFile()
+#4 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#5 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(316): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#6 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(473): Illuminate\\Foundation\\Application->bootstrapWith()
+#7 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php(90): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#8 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php(60): Illuminate\\Foundation\\Console\\ConfigCacheCommand->getFreshConfiguration()
+#9 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\ConfigCacheCommand->handle()
+#10 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#12 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#13 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Container/Container.php(690): Illuminate\\Container\\BoundMethod::call()
+#14 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
+#15 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute()
+#16 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#17 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/symfony/console/Application.php(1047): Illuminate\\Console\\Command->run()
+#18 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/symfony/console/Application.php(316): Symfony\\Component\\Console\\Application->doRunCommand()
+#19 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#20 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(197): Symfony\\Component\\Console\\Application->run()
+#21 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1203): Illuminate\\Foundation\\Console\\Kernel->handle()
+#22 /home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/artisan(13): Illuminate\\Foundation\\Application->handleCommand()
+#23 {main}
 "} 

@@ -6,17 +6,21 @@ use App\Http\Requests\DeleteProductRequest;
 use App\Http\Requests\Products\UpdateProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\Repositories\ImageRepository;
 use App\Repositories\Products\ProductRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ProductController extends BaseController
 {
     protected $productRepo;
     public $model;
-    public function __construct(ProductRepository $productRepo)
+
+    public $image_repo;
+
+    public function __construct(ProductRepository $productRepo, ImageRepository $image_repo)
     {
         $this->productRepo = $productRepo;
+        $this->image_repo =  $image_repo;
     }
 
     /**
@@ -151,14 +155,17 @@ class ProductController extends BaseController
     public function store(Request $request)
     {
         try {
-            $is_inserted = $this->productRepo->store($request->all());
-            if ($is_inserted) {
+            $product = $this->productRepo->store($request->all());
+            if ($product) {
+                if($request->has('image')){
+                    $image = $this->image_repo->storeImages($request, $product);
+                }
                 return $this->successResponse(null, "Product Created");
             } else {
                 return $this->errorResponse("Product Not Created","",500);
             }
         } catch (\Exception $e) {
-            return $this->errorResponse($e->getMessage(),"",500);
+            return $this->errorResponse($e->getMessage(),$e->getTraceAsString(),500);
         }
     }
 
