@@ -355,7 +355,7 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/storage/app',
+        'root' => '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/storage/app/public/',
         'throw' => false,
       ),
       'public' => 
@@ -464,7 +464,25 @@
   array (
     'options' => 
     array (
-      'image_path' => '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/storage/app/public/uploads/',
+      'image_path' => '/home/tk-lpt-0530/Documents/Laravel_Projects/RevisitLaravel/storage/app/public/uploads',
+      'size' => 
+      array (
+        'small' => 
+        array (
+          0 => 300,
+          1 => 200,
+        ),
+        'medium' => 
+        array (
+          0 => 600,
+          1 => 500,
+        ),
+        'large' => 
+        array (
+          0 => 1000,
+          1 => 900,
+        ),
+      ),
     ),
   ),
   'l5-swagger' => 

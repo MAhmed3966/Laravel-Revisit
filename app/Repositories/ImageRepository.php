@@ -2,16 +2,15 @@
 
 namespace App\Repositories;
 
+use App\Models\DefaultImage;
 use App\Models\Image;
-use App\Models\Product;
-use App\Models\Vendor;
 use App\Repositories\Products\BaseRepository;
 use App\Services\ErrorLogger;
 use Exception;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 
 class ImageRepository extends BaseRepository
@@ -24,66 +23,30 @@ class ImageRepository extends BaseRepository
     }
 
 
-    public function moveImages($model, $image, $is_default = 0)
+    public function moveImages($request, $model, $image, $is_default = 0)
     {
         try {
             $image_path = $image->store('uploads', $this->storage);
-            // $image->move(storage_path('app/public'), $image_name);
-            $this->insertImages($model,  $image_path, $is_default, $image);
+            return $image_path;
         } catch (\Exception $e) {
             ErrorLogger::logAndThrow($e, "Error is in moveImages method in ImageRepository");
         }
     }
 
-    public function saveMultiResolutionImages($image)
-    {
-        // dd($image->getRealPath());
-        try {
-            $manager = new ImageManager(
-                new Driver()
-            );
-            $destinattion_path = config('image.options.image_path');
-            $img = $manager->make($image->getRealPath());
 
-            $largeImage = $img->resize(1024, 768, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            $largeImage->save($destinattion_path . 'image_large.jpg');
 
-            // Create and save medium image
-            $mediumImage = $img->resize(640, 480, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            $mediumImage->save($destinattion_path . 'image_medium.jpg');
-
-            // Create and save small image
-            $smallImage = $img->resize(320, 240, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            $smallImage->save($destinattion_path . 'image_small.jpg');
-        } catch (\Exception $e) {
-            dd($e->getMessage(),"here");
-        }
-
-        // $image_manipulation =  $manager->read($image_path);
-    }
-    public function insertImages($model, $image_path, $is_default, $image)
+    public function insertImages($request, $model, $image_path, $is_default = 0)
     {
         try {
             $image_created = $model->images()->create([
-                'title' => $image_path,
-                'path' => config('image.options.image_path') . $image_path,
+                'title' => basename($image_path),
+                'path' => Storage::url($image_path),
                 'is_default' =>  $is_default
             ]);
-            if ($is_default = 1) {
-                $this->saveMultiResolutionImages($image);
-            }
             if (!$image_created) {
                 throw new Exception("Image not created");
             }
+            return $image_created;
         } catch (\Exception $e) {
             ErrorLogger::logAndThrow($e, "Error is in insertImages method in ImageRepository");
         }
@@ -96,22 +59,56 @@ class ImageRepository extends BaseRepository
         try {
             if (count($request->image) > 0) {
                 foreach ($request->image as $image) {
-                    $this->moveImages($model, $image);
+                    $image_path = $this->moveImages($request, $model, $image);
+                    $this->insertImages($request, $model,  $image_path, 0);
                 }
-                // dd($model, $model->images()->get());
-                if ($request->has('default_image')) {
-                    // $manager = new ImageManager('gd');//
-
-                    $default_image_name = $this->moveImages($model, $request->default_image, 1);
-                    // $default_image_arr = [];
-                    // $default_image_arr[0] = $manager->make($image)->resize(150, 150)->encode($image->extension());
-                    // $default_image_arr[1] = $manager->make($image)->resize(150, 150)->encode($image->extension());
-                    // $default_image_arr[2] = $manager->make($image)->resize(150, 150)->encode($image->extension());
-
-                }
+            }
+            if ($request->has('default_image')) {
+                $image_path_default = $this->moveImages($request, $model, $request->default_image);
+                $default_img = $this->insertImages($request, $model,  $image_path_default, is_default: 1);
+                $this->saveMultiResolutionImages($default_img, $image_path_default);
             }
         } catch (\Exception $e) {
             ErrorLogger::logAndThrow($e, "Error is in storeImages method in ImageRepository");
         }
     }
+
+    public function moveMultiResolutionImages($default_img, $manager, $image_size)
+    {
+
+        $imagePath = Storage::path('uploads/' . $default_img->title);
+        $image = $manager->read(input: $imagePath);
+        $array_dimensions = config('image.options.size');
+        if (isset($array_dimensions[$image_size])) {
+            $image->resize($array_dimensions[$image_size][0], $array_dimensions[$image_size][1]);
+        }
+        $directory = 'uploads/' . $default_img->id . '/';
+        Storage::makeDirectory($directory);
+        $image_saved_path = $directory . $image_size . "_" . $default_img->title;
+        $image->save(Storage::path($image_saved_path));
+        return $image_saved_path;
+    }
+
+    public function saveMultiResolutionImages($default_img, $image_path_default)
+    {
+        try {
+            $manager = new ImageManager(new Driver());
+            $sizes = ["small", "medium", "large"];
+
+            foreach ($sizes as $size) {
+                $saved_image_path = $this->moveMultiResolutionImages($default_img, $manager, $size);
+
+                DefaultImage::create([
+                    'title' => $size . '_' . basename($image_path_default),
+                    'path' => Storage::url($saved_image_path),  // Use the local storage URL for saved image
+                    'image_id' =>  $default_img->id,
+                    'image_size' => $size
+                ]);
+            }
+        } catch (\Exception $e) {
+            ErrorLogger::logAndThrow($e, "Error is in storeImages method in ImageRepository");
+        }
+    }
+
+    public function editDefaultImage() {}
 }
