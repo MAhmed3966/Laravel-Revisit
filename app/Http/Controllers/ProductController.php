@@ -239,7 +239,6 @@ class ProductController extends BaseController
             $is_updated = $this->productRepo->update($request->id, $request->all());
             if ($is_updated) {
                 return $this->successResponse(null, "Product updated");
-
             } else {
                 return $this->errorResponse("Product Not updated","",500);
             }

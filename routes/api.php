@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ImageSettingsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductInventoryTransactionsController;
@@ -17,5 +18,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/update-posts/{id}', [PostController::class, 'updatePost'])->name('update.posts');
     Route::resource('products', ProductController::class);
     Route::apiResource('product-transactions', ProductInventoryTransactionsController::class);
+    Route::put('image-settings/{id}/', [ImageSettingsController::class, 'update']);
+
 });
 

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('image_settings', function (Blueprint $table) {
             $table->id();
+            $table->string('size');
+            $table->json('dimension');
             $table->timestamps();
         });
     }

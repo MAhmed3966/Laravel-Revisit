@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Log;
 class BaseRepository implements BaseInterface
 {
     protected $model;
-    public function __construct($model)
+    public function
+    __construct($model)
     {
         $this->model = $model;
     }
