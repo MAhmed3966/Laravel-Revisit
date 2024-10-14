@@ -8,6 +8,7 @@ use App\Models\ImageSettings;
 use App\Repositories\Products\BaseRepository;
 use App\Services\ErrorLogger;
 use Exception;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +30,9 @@ class ImageRepository extends BaseRepository
     {
         try {
             $image_path = $image->store('uploads', $this->storage);
-
+            if (!$image_path) {
+                throw new FileNotFoundException('The file could not be stored.');
+            }
             return $image_path;
         } catch (\Exception $e) {
             ErrorLogger::logAndThrow($e, "Error is in moveImages method in ImageRepository");
@@ -46,12 +49,8 @@ class ImageRepository extends BaseRepository
                 'path' => Storage::url($image_path),
                 'is_default' =>  $is_default
             ]);
-            if (!$image_created) {
-                throw new Exception("Image not created");
-            }
             return $image_created;
         } catch (\Exception $e) {
-            dd($e->getMessage());
             ErrorLogger::logAndThrow($e, "Error is in insertImages method in ImageRepository");
         }
     }
@@ -60,6 +59,7 @@ class ImageRepository extends BaseRepository
 
     public function storeImages($request, $model)
     {
+        try {
             if (count($request->image) > 0) {
                 foreach ($request->image as $image) {
                     $image_path = $this->moveImages($request, $model, $image);
@@ -72,16 +72,14 @@ class ImageRepository extends BaseRepository
                 ]);
                 if ($validator->fails()) {
                     throw ValidationException::withMessages($validator->errors()->toArray());
-
                 }
                 $image_path_default = $this->moveImages($request, $model, $request->default_image);
                 $default_img = $this->insertImages($request, $model,  $image_path_default, is_default: 1);
                 $this->saveMultiResolutionImages($request, $default_img, $image_path_default);
             }
-        // } catch (\Exception $e) {
-        //     dd($e->getMessage());
-        //     ErrorLogger::logAndThrow($e, "Error is in storeImages method in ImageRepository");
-        // }
+        } catch (\Exception $e) {
+            ErrorLogger::logAndThrow($e, "Error is in storeImages method in ImageRepository");
+        }
     }
 
     public function moveMultiResolutionImages($request, $default_img, $manager, $image_attribtes)
@@ -104,6 +102,15 @@ class ImageRepository extends BaseRepository
                 default:
                     return response()->json(['error' => 'Unsupported image format'], 400);
             }
+            return $this->compressAndSave($imagePath, $image_attribtes, $image, $default_img, $image_size);
+        } catch (\Exception $e) {
+            ErrorLogger::logAndThrow($e, "Error is in moveMultiResolutionImages method in ImageRepository");
+        }
+    }
+
+    public function compressAndSave($imagePath, $image_attribtes, $image, $default_img, $image_size)
+    {
+        try {
             list($width, $height) = getimagesize($imagePath);
             $array_dimensions = json_decode($image_attribtes['dimension']);
             if (isset($array_dimensions)) {
@@ -112,21 +119,21 @@ class ImageRepository extends BaseRepository
             }
             $directory = '/uploads/' . $default_img->id . '/';
             $image_saved_path = $directory . $image_size . "_" . $default_img->title;
-            // // Ensure the directory exists
+            //Ensure the directory exists
             if (!Storage::exists($directory)) {
                 Storage::makeDirectory($directory, 755, true);
             }
-            // // Get the full path where the image will be saved
+            //Get the full path where the image will be saved
             $fullImagePath = Storage::path(path: $image_saved_path);
-            // // dd($fullImagePath);        // Save the image
             imagejpeg($thumb, $fullImagePath, quality: 75); // Try quality = 75 for better compression
             // Clean up
             imagedestroy($image);
             return $image_saved_path;
         } catch (\Exception $e) {
-            ErrorLogger::logAndThrow($e, "Error is in moveMultiResolutionImages method in ImageRepository");
+            ErrorLogger::logAndThrow($e, "Error is in compressAndSave method in ImageRepository");
         }
     }
+
 
     public function saveMultiResolutionImages($request, $default_img, $image_path_default)
     {
@@ -143,7 +150,6 @@ class ImageRepository extends BaseRepository
                 ]);
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
             ErrorLogger::logAndThrow($e, "Error is in saveMultiResolutionImages method in ImageRepository");
         }
     }
