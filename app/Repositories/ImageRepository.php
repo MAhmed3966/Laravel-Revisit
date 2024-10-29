@@ -37,12 +37,25 @@ class ImageRepository extends BaseRepository
 
     public function storeImages($request, $model)
     {
+
+       /*
+            ---- Requirements
+            1. if we have the array for the generic images then we dont delete any previous images neither add new one
+            2. if we have the new images we delete all the images of specific model from db and Note: (note don't delete the default image)
+               2a. we'll delete from the folder
+            3. if default image id existing_default_image is present don't delete the default image otherwise
+               3a. delete the image from the database also delete all the representative categories of default images
+               3b. delete the image from the folder and also delete the complete folder
+
+       */
         try {
             $this->model = $model;
             $this->modelInstanceOf = $this->getModelToString($this->model);
-            $this->path = $this->modelInstanceOf.'/'.$this->model->id.'/uploads/';
+            $this->path = $this->modelInstanceOf . '/' . $this->model->id . '/uploads/';
             if (!$request->has('existing_multiple_image_ids') && count($request->image) > 0) {
-                foreach ($request->image as $image) {
+                // $has_image_previously = $this->model->has('')
+                // if()
+                foreach($request->image as $image) {
                     $image_path = $this->moveImages($request, $image);
                     $this->insertImages($request, $image_path, 0);
                 }
@@ -119,7 +132,7 @@ class ImageRepository extends BaseRepository
     {
         try {
             $image_size = $image_attribtes['size'];
-            $imagePath = Storage::path(path:$this->path . $default_img->title);
+            $imagePath = Storage::path(path: $this->path . $default_img->title);
 
             $extension = $request->default_image->getClientOriginalExtension();
             switch (strtolower($extension)) {
@@ -136,7 +149,7 @@ class ImageRepository extends BaseRepository
                 default:
                     return response()->json(['error' => 'Unsupported image format'], 400);
             }
-            return $this->compressAndSave( $imagePath, $image_attribtes, $image, $default_img, $image_size);
+            return $this->compressAndSave($imagePath, $image_attribtes, $image, $default_img, $image_size);
         } catch (\Exception $e) {
             ErrorLogger::logAndThrow($e, "Error is in moveMultiResolutionImages method in ImageRepository");
         }
@@ -151,7 +164,7 @@ class ImageRepository extends BaseRepository
                 $thumb = imagecreatetruecolor($array_dimensions->width, $array_dimensions->height);
                 imagecopyresized($thumb, $image, 0, 0, 0, 0, $array_dimensions->width, $array_dimensions->height, $width, $height);
             }
-            $directory = $this->path. $default_img->id . '/';
+            $directory = $this->path . $default_img->id . '/';
             $image_saved_path = $directory . $image_size . "_" . $default_img->title;
             //Ensure the directory exists
             if (!Storage::exists($directory)) {
